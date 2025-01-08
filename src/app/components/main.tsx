@@ -7,10 +7,6 @@ import catBin from "../../../public/cat_bin.jpg"
 export const Content = () => {
     const { joke, loading, error, getJoke } = useJoke();
 
-    const handleButtonAction = async () => {
-        await getJoke();
-    }
-
     return (
         <main className="flex flex-row gap-8 items-center">
             <Image
@@ -25,7 +21,7 @@ export const Content = () => {
                 {!loading && !error && <p>{joke}</p>}
 
                 <button
-                    onClick={handleButtonAction}
+                    onClick={getJoke}
                     className="mt-4 px-6 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
                 >
                     Get Another Joke
