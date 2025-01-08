@@ -12,7 +12,47 @@ yarn dev
 pnpm dev
 # or
 bun dev
+
 ```
+
+## Install libraries
+```bash
+npm i 
+```
+
+## Initialize Prisma:
+```bash
+npx prisma init
+```
+
+## Configure Your Database Connection in .env:
+in my case it was MySQL for example: 
+DATABASE_URL="mysql://USER:PASSWORD@HOST:PORT/DATABASE?schema=views"
+
+
+## Run the Prisma migration:
+```bash
+npx prisma migrate dev --name init
+```
+
+##  Create a Visitor Model in Prisma:
+In prisma/schema.prisma
+
+
+## Update the database schema:
+```bash
+npx prisma migrate dev --name views-count
+```
+
+## Genrate a Primsa Client:
+```bash
+npx prisma generate
+```
+
+## Rerun the projet again: 
+```bash
+npm run dev
+``` 
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
