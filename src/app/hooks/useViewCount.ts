@@ -12,7 +12,7 @@ import { useCallback, useEffect, useState } from 'react';
 */
 
 export const useViewCount = () => {
-  const [, setViewCount] = useState<number>(0);
+  const [viewCount, setViewCount] = useState<number | null>(null);
 
 
   const fetchViewCount = useCallback(async () => {
@@ -44,6 +44,6 @@ export const useViewCount = () => {
     incrementViewCount()
   }, [incrementViewCount]);
 
-  return { incrementViewCount };
+  return { viewCount };
 };
 

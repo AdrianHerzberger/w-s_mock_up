@@ -1,18 +1,14 @@
 "use client";
 
 import { useJoke } from "../hooks/useJoke";
-import { useViewCount } from "../hooks/useViewCount";
 import Image from "next/image";
 import catBin from "../../../public/cat_bin.jpg"
 
 export const Content = () => {
     const { joke, loading, error, getJoke } = useJoke();
 
-    const { incrementViewCount } = useViewCount();
-
     const handleButtonAction = async () => {
         await getJoke();
-        await incrementViewCount
     }
 
     return (
